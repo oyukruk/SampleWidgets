@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e5;
+}
+
+.h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.airport_name {
+  margin: 0;
+}
+
+.icon {
+  font-size: 64px;
+  border: 2px solid #fff;
+  margin-right: 16px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.header {
+  background: #3b444b;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  padding: 64px;
+}
+.insideheader {
+  display: flex;
+  flex-direction: row;
+}
+.header_main {
+  flex-grow: 1;
+}
+.headertime {
+  font-size: 32px;
+}
+.hotels {
+  background-color: #e5e5e5;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
