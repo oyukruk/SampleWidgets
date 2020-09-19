@@ -23,12 +23,17 @@
   
   }
 
-  .space {
-
-    height: 50%;
-    float: left;
- 
+  .picture {
+    
+    width: 60%;
+    margin-bottom: auto; 
  }
+
+ .space-one {
+    
+  height: 8%;
+  margin-bottom: auto; 
+}
 
   .claimStepTitle {
     color: #ffffff;
