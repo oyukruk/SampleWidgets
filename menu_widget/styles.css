@@ -31,13 +31,31 @@
 
  .space-one {
     
-  height: 8%;
+  height: 4%;
   margin-bottom: auto; 
 }
 
+.price-tag {
+    
+  height: 20%;
+  bottom: 0px;
+  position: relative;
+}
+
+
+.price-txt { 
+  position: absolute; 
+  font-size: 40px;
+  font-weight:bold; 
+  color: black;
+  top: 84%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  
+} 
   .claimStepTitle {
     color: #ffffff;
-    font-size: 45px;
+    font-size: 42px;
     margin-top: 5%;
     font-weight:bold; 
   }
@@ -45,7 +63,7 @@
     text-align: center;
     margin-left: 33.3%;
     width: 33.3%;
-    font-size: 25px;
+    font-size: 22px;
   }
   @media (min-width: 1200px) {
     
