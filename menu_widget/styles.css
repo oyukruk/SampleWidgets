@@ -38,13 +38,14 @@
   .claimStepTitle {
     color: #ffffff;
     font-size: 45px;
-    margin-top: 110px;
+    margin-top: 5%;
+    font-weight:bold; 
   }
   .claimStepText {
     text-align: center;
     margin-left: 33.3%;
     width: 33.3%;
-    font-size: 20px;
+    font-size: 25px;
   }
   @media (min-width: 1200px) {
     
