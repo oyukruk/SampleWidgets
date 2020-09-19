@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css" />
+
+</head>
+
+<body>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container" id="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="claimSteps" id="stepOne"  style="background-color: rgb(226, 178, 21)">
+        <p class="claimStepNumber">1</p>
+        <p class="claimStepTitle">Title one</p>
+        <p class="claimStepText">Get started by entering your claim information in the fields below.</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="claimSteps" id="stepTwo" style="background-color: rgb(24, 141, 209)">
+        <p class="claimStepNumber">2</p>
+        <p class="claimStepTitle">Title two</p>
+        <p class="claimStepText">Next drag and drop or upload your documentation.</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="claimSteps" id="stepThree" style="background-color: rgb(226, 96, 21)">
+        <p class="claimStepNumber">3</p>
+        <p class="claimStepTitle">Title three</p>
+        <p class="claimStepText">Now you're ready to submit your claim and await reimbursement.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+
+        // var params = [];
+        // params.push({
+        //     key: "Url",
+        //     value: "https://www.google.com/maps/d/u/0/embed?mid=1ByJgR75lLE9L4MMqtVAmByErwrjKBm7q"
+        // })
+        // params.push({
+        //     key: "FrameWidth",
+        //     value: "300"
+        // })
+        // params.push({
+        //     key: "FrameHeight",
+        //     value: "600"
+        // })
+        // params.push({
+        //     key: "FrameUniqueKey",
+        //     value: "123213"
+        // })
+        // setParams(params)
+
+
+        var FrameUniqueKey, FrameWidth, FrameHeight = '';
+        var Url = "";
+
+        function listener(event) {
+            if (Array.isArray(event.data))
+                setParams(event.data);
+        }
+        if (window.addEventListener) {
+            window.addEventListener('message', listener, false);
+        } else if (window.attachEvent) { // ie8
+            window.attachEvent('onmessage', listener);
+        }
+
+
+        function init() {
+            document.getElementById('googleIframe').setAttribute('width', FrameWidth);
+            document.getElementById('googleIframe').setAttribute('height', FrameHeight);
+            document.getElementById('googleIframe').setAttribute('src', Url);
+            if (FrameUniqueKey != '') {
+                window.parent.postMessage(JSON.stringify({
+                    type: 'init',
+                    frameUniqueKey: FrameUniqueKey
+                }), '*');
+            }
+        }
+
+        function setParams(params) {
+            Url = "";
+            FrameWidth = 0;
+            FrameHeight = 0;
+            params.forEach(element => {
+                switch (element.key) {
+                    case "Url":
+                        Url = element.value;
+                        break;
+                    case "FrameUniqueKey":
+                        FrameUniqueKey = element.value;
+                        break;
+                    case "FrameWidth":
+                        FrameWidth = element.value;
+                        break;
+                    case "FrameHeight":
+                        FrameHeight = element.value;
+                        break;
+                }
+            });
+            init();
+        }
+    </script>
+
+
+</body>
+
+</html>
