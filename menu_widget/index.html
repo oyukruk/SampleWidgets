@@ -1,126 +1,130 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-
+  <link rel="stylesheet" href="./main.css" />
+  
 </head>
 
 <body>
-    
 
-<div class="container" id="container" style="width: 100%" style="height: 100%">
-  <div class="row" style="width: 100%">
-    <div class="divs" >
-      <div class="claimSteps" id="stepOne"  style="background-color: rgb(240, 177, 12)" >
-        <div class="space-one" ></div>
-        <img src="assets/burger.png" class="picture" alt="burger" />
-        <p class="claimStepTitle">Hamburger Menü</p>
-        <p class="claimStepText">250 gr Hamburger Eti Patates 5'li Soğan Halkası İçecek</p>
-        <div>
-          <img src="assets/price.png" class="price-tag" alt="price" />
-          <h3 class="price-txt">22,99</h3> 
-        </div>
+  <div class="widget-container">
+    <div class="left-tab">
+      <div class="img-part">
+        <img src="./assets/burger.png" alt="">
+      </div>
+      <div class="menu-name-part">Hamburger Menu</div>
+      <div class="menu-content">
+        <div>content 1</div>
+        <div>content 2</div>
+        <div>content 3</div>
+      </div>
+      <div class="menu-price">
+        <div class="price-img"><img src="./assets/price.png" alt=""></div>
+        <div class="price-text">29.90 TL</div>
       </div>
     </div>
-    <div class="divs" >
-      <div class="claimSteps" id="stepTwo" style="background-color: rgb(40, 103, 185)" >
-        <div class="space-one" ></div>
-        <img src="assets/burger.png" class="picture" alt="burger" />
-        <p class="claimStepTitle">Ton Balıklı Salata Menü</p>
-        <p class="claimStepText">Ton Balığı Akdeniz Yeşillikleri Kuruton İçecek</p>
-        <div>
-          <img src="assets/price.png" class="price-tag" alt="price" />
-          <h3 class="price-txt">22,99</h3> 
-        </div>
+    <div class="center-tab">
+      <div class="img-part">
+        <img src="./assets/burger.png" alt="">
+      </div>
+      <div class="menu-name-part">Beaf Menu</div>
+      <div class="menu-content">
+        <div>content 1</div>
+        <div>content 2</div>
+        <div>content 3</div>
+      </div>
+      <div class="menu-price">
+        <div class="price-img"><img src="./assets/price.png" alt=""></div>
+        <div class="price-text">29.90 TL</div>
       </div>
     </div>
-    <div class="lastdiv" >
-      <div class="claimSteps" id="stepThree" style="background-color: rgb(226, 96, 21)" >
-        <div class="space-one" ></div>
-        <img src="assets/burger.png" class="picture" alt="burger" />
-        <p class="claimStepTitle">Döner Wrap Menü</p>
-        <p class="claimStepText">Wrap Et Döner Yeşillikler Patates İçecek</p>
-        <div>
-          <img src="assets/price.png" class="price-tag" alt="price" />
-          <h3 class="price-txt">22,99</h3> 
-        </div>
+    <div class="right-tab">
+      <div class="img-part">
+        <img src="./assets/burger.png" alt="">
+      </div>
+      <div class="menu-name-part">Cheeseburger Menu</div>
+      <div class="menu-content">
+        <div>content 1</div>
+        <div>content 2</div>
+        <div>content 3</div>
+      </div>
+      <div class="menu-price">
+        <div class="price-img"><img src="./assets/price.png" alt=""></div>
+        <div class="price-text">29.90 TL</div>
       </div>
     </div>
   </div>
-</div>
 
-    <script>
-
-        // var params = [];
-        // params.push({
-        //     key: "Url",
-        //     value: "https://www.google.com/maps/d/u/0/embed?mid=1ByJgR75lLE9L4MMqtVAmByErwrjKBm7q"
-        // })
-        // params.push({
-        //     key: "FrameWidth",
-        //     value: "300"
-        // })
-        // params.push({
-        //     key: "FrameHeight",
-        //     value: "600"
-        // })
-        // params.push({
-        //     key: "FrameUniqueKey",
-        //     value: "123213"
-        // })
-        // setParams(params)
+  <script>
+    // var params = [];
+    // params.push({
+    //     key: "Url",
+    //     value: "https://www.google.com/maps/d/u/0/embed?mid=1ByJgR75lLE9L4MMqtVAmByErwrjKBm7q"
+    // })
+    // params.push({
+    //     key: "FrameWidth",
+    //     value: "300"
+    // })
+    // params.push({
+    //     key: "FrameHeight",
+    //     value: "600"
+    // })
+    // params.push({
+    //     key: "FrameUniqueKey",
+    //     value: "123213"
+    // })
+    // setParams(params)
 
 
-        var FrameUniqueKey, FrameWidth, FrameHeight = '';
-        var Url = "";
+    var FrameUniqueKey, FrameWidth, FrameHeight = '';
+    var Url = "";
 
-        function listener(event) {
-            if (Array.isArray(event.data))
-                setParams(event.data);
+    function listener(event) {
+      if (Array.isArray(event.data))
+        setParams(event.data);
+    }
+    if (window.addEventListener) {
+      window.addEventListener('message', listener, false);
+    } else if (window.attachEvent) { // ie8
+      window.attachEvent('onmessage', listener);
+    }
+
+
+    function init() {
+      document.getElementById('googleIframe').setAttribute('width', FrameWidth);
+      document.getElementById('googleIframe').setAttribute('height', FrameHeight);
+      document.getElementById('googleIframe').setAttribute('src', Url);
+      if (FrameUniqueKey != '') {
+        window.parent.postMessage(JSON.stringify({
+          type: 'init',
+          frameUniqueKey: FrameUniqueKey
+        }), '*');
+      }
+    }
+
+    function setParams(params) {
+      Url = "";
+      FrameWidth = 0;
+      FrameHeight = 0;
+      params.forEach(element => {
+        switch (element.key) {
+          case "Url":
+            Url = element.value;
+            break;
+          case "FrameUniqueKey":
+            FrameUniqueKey = element.value;
+            break;
+          case "FrameWidth":
+            FrameWidth = element.value;
+            break;
+          case "FrameHeight":
+            FrameHeight = element.value;
+            break;
         }
-        if (window.addEventListener) {
-            window.addEventListener('message', listener, false);
-        } else if (window.attachEvent) { // ie8
-            window.attachEvent('onmessage', listener);
-        }
-
-
-        function init() {
-            document.getElementById('googleIframe').setAttribute('width', FrameWidth);
-            document.getElementById('googleIframe').setAttribute('height', FrameHeight);
-            document.getElementById('googleIframe').setAttribute('src', Url);
-            if (FrameUniqueKey != '') {
-                window.parent.postMessage(JSON.stringify({
-                    type: 'init',
-                    frameUniqueKey: FrameUniqueKey
-                }), '*');
-            }
-        }
-
-        function setParams(params) {
-            Url = "";
-            FrameWidth = 0;
-            FrameHeight = 0;
-            params.forEach(element => {
-                switch (element.key) {
-                    case "Url":
-                        Url = element.value;
-                        break;
-                    case "FrameUniqueKey":
-                        FrameUniqueKey = element.value;
-                        break;
-                    case "FrameWidth":
-                        FrameWidth = element.value;
-                        break;
-                    case "FrameHeight":
-                        FrameHeight = element.value;
-                        break;
-                }
-            });
-            init();
-        }
-    </script>
+      });
+      init();
+    }
+  </script>
 
 
 </body>
