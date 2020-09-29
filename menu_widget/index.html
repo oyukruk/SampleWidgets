@@ -1,8 +1,8 @@
-<html>
+<!DOCTYPE html>
 
 <head>
   <link rel="stylesheet" href="./main.css" />
-  <script src="mock.data.generator.js"></script>
+  <script src="deneme.js"></script>
 </head>
 
 <body>
@@ -10,13 +10,13 @@
   <div class="widget-container">
     <div class="left-tab">
       <div class="img-part">
-        <img src="./assets/burger.png" alt="">
+        <img id="img1" src="./assets/burger.png" alt="">
       </div>
-      <div class="menu-name-part">Hamburger Menu</div>
+      <div id="title1" class="menu-name-part" ></div>
       <div class="menu-content">
-        <div>content 1</div>
-        <div>content 2</div>
-        <div>content 3</div>
+        <div id="content1.1"></div>
+        <div id="content1.2"></div>
+        <div id="content1.3"></div>
       </div>
       <div class="menu-price">
         <div class="price-img"><img src="./assets/price.png" alt=""></div>
@@ -27,7 +27,7 @@
       <div class="img-part">
         <img src="./assets/burger.png" alt="">
       </div>
-      <div class="menu-name-part">Beaf Menu</div>
+      <div class="menu-name-part">Beef Menu</div>
       <div class="menu-content">
         <div>content 1</div>
         <div>content 2</div>
@@ -56,6 +56,38 @@
   </div>
 
   <script>
+
+    if (!String.prototype.formatString) {
+        String.prototype.formatString = function () {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function (match, number) {
+                return typeof args[number] != 'undefined' ?
+                args[number] :
+                match;
+            });
+        };
+     }
+
+
+      $(document).ready(function () {
+
+      var myGenerator = new MockDataGenerator();
+      var generatedObject = myGenerator.fetchRandomObject();
+      
+      $("#title1").text(generatedObject.Title);
+      $("#content1.1").text(generatedObject.contents[0]);
+      $("#content1.2").text(generatedObject.contents[1]);
+      $("#content1.3").text(generatedObject.contents[2]);
+      
+      generatedObject = myGenerator.fetchRandomObject();
+      //ortadaki menu icin aynı islemler..
+      
+
+      });
+
+
+
+
     // var params = [];
     // params.push({
     //     key: "Url",

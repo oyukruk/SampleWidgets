@@ -6,7 +6,7 @@ class MockDataGenerator {
 
             this.testMomentObject = moment();
 
-            this.titleArray = ['Milano', 'Istanbul', 'Toronto', 'Quebec'];
+            this.titleArray = ['Hamburger Menu', 'Beef Menu', 'Cheeseburger Menu'];
             this.contentOneArray = ['250 gr Hamburger Eti', 'Ton Balığı', 'Wrap Et Döner'];
             this.contentTwoArray = ['Patates', 'Akdeniz Yeşillikleri', 'Yeşillikler'];
             this.contentThreeArray = ['5 li Soğan Halkası', 'Kruton', 'Patates'];
