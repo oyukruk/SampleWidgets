@@ -12,7 +12,8 @@ class MockDataGenerator {
                 menuTitle: "Hamburger Menu",
                 menuImageUrl: "./assets/burger.png",
                 menuContents: ["250 gr Hamburger Eti", "Patates", "5'li Soğan Halkası"],
-                menuBackgroundColor : "rgb(226, 96, 21)"
+                menuBackgroundColor : "rgb(226, 96, 21)",
+                menuCost : "29,90"
             }
 
 
@@ -21,7 +22,8 @@ class MockDataGenerator {
                 menuTitle: "Ton Balıklı Salata Menu",
                 menuImageUrl: "./assets/salad.png",
                 menuContents: ["Ton Balığı", "Akdeniz Yeşillikleri", "Kruton"],
-                menuBackgroundColor : "rgb(40, 103, 185)"
+                menuBackgroundColor : "rgb(40, 103, 185)",
+                menuCost : "24,90"
             }
 
             var menuData03 = {
@@ -29,15 +31,17 @@ class MockDataGenerator {
                 menuTitle: "Döner Wrap Menu",
                 menuImageUrl: "./assets/doner.png",
                 menuContents: ["Wrap Et Döner", "Yeşillikler", "Patates"],
-                menuBackgroundColor : "rgb(240, 177, 12)"
+                menuBackgroundColor : "rgb(240, 177, 12)",
+                menuCost : "39,90"
             }
 
             var menuData04 = {
                 menuOrder: 0,
                 menuTitle: "Taco Menu",
                 menuImageUrl: "./assets/burger.png",
-                menuContents: ["Taco", "Patates", "Cola"],
-                menuBackgroundColor : "rgb(226, 96, 21)"
+                menuContents: ["Taco", "Patates", "Cola","Wrap Et Döner", "Yeşillikler"],
+                menuBackgroundColor : "rgb(226, 96, 21)",
+                menuCost : "24,00"
             }
 
             var menuData05 = {
@@ -45,7 +49,8 @@ class MockDataGenerator {
                 menuTitle: "Beef Menu",
                 menuImageUrl: "./assets/burger.png",
                 menuContents: ["Ton Balığı", "Patates", "Cola"],
-                menuBackgroundColor : "rgb(240, 177, 12)"
+                menuBackgroundColor : "rgb(240, 177, 12)",
+                menuCost : "48,90"
             }
 
 

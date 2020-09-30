@@ -2,7 +2,7 @@
 
 <head>
   <link rel="stylesheet" href="./main.css" />
-  <script src="deneme.js"></script>
+  <script src="js/mock-data-generator.js"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -12,53 +12,40 @@
   </div>
 
   <script>
-    if (!String.prototype.formatString) {
-      String.prototype.formatString = function () {
-        var args = arguments;
-        return this.replace(/{(\d+)}/g, function (match, number) {
-          return typeof args[number] != 'undefined' ?
-            args[number] :
-            match;
-        });
-      };
-    }
-
-
+    
     $(document).ready(function () {
 
       var myGenerator = new MockDataGenerator();
       
       console.log(generatedObject);
 
-
-
       for (var II = 0; II < 3; II++) {
         var generatedObject = myGenerator.fetchRandomObject();
         var menuDom = "";
 
         menuDom =
-          '<div class="menu-tab" id="menu-tab-'+II+'"><div class="img-part"><img id="img'+II+'" src="./assets/burger.png" alt=""></div><div id="title"'+II+' class="menu-name-part" ></div><div class="menu-content"><div id="content'+II+'-1"></div><div id="content'+II+'-2"></div><div id="content'+II+'-3"></div></div>';
+          '<div class="menu-tab" id="menu-tab-'+II+'"><div class="img-part"><img id="img'+II+'" src="./assets/burger.png" alt=""></div><div id="title'+II+'" class="menu-name-part" ></div><div class="menu-content" id="contents-'+II+'"></div>';
         menuDom +=
-          '<div class="menu-price"><div class="price-img"><img src="./assets/price.png" alt=""></div><div class="price-text" id="price"'+II+'>29.90 TL</div></div></div>';
+          '<div class="menu-price"><div class="price-img"><img src="./assets/price.png" alt=""></div><div class="price-text" id="price'+II+'"></div></div></div>';
         console.log("appending:" + menuDom);
         $("#main-container").append(menuDom);
 
+        $("#img"+II).attr("src",generatedObject.menuImageUrl);
         $("#title"+II).text(generatedObject.menuTitle);
-        $("#content"+II+"-1").html(generatedObject.menuContents[0]);
-        $("#content"+II+"-2").html(generatedObject.menuContents[1]);
-        $("#content"+II+"-3").html(generatedObject.menuContents[2]);
+        
+        for (var a in generatedObject.menuContents) {
+
+          var contentDom = "";
+          contentDom = '<div id="content'+II+'-'+a+'"></div>';
+          $("#contents-"+II).append(contentDom);
+          $("#content"+II+"-"+a).html(generatedObject.menuContents[a]);
+        }
 
         $("#menu-tab-"+II).css("background-color", generatedObject.menuBackgroundColor);
+        $("#price"+II).text(generatedObject.menuCost+ " TL");
       }
 
-
-      //ortadaki menu icin aynı islemler..
-
-
     });
-
-
-
 
     // var params = [];
     // params.push({
