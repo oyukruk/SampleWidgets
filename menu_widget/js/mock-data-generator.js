@@ -39,7 +39,7 @@ class MockDataGenerator {
                 menuOrder: 0,
                 menuTitle: "Taco Menu",
                 menuImageUrl: "./assets/burger.png",
-                menuContents: ["Taco", "Patates", "Cola"],
+                menuContents: ["Taco", "Patates", "Cola", "Yeşillikler", "Patates"],
                 menuBackgroundColor : "rgb(226, 96, 21)",
                 menuCost : "24,00"
             }
