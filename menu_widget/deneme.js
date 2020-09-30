@@ -1,59 +1,60 @@
-
-var menuDataArray = [];
-
-var menuData01 = {
-    menuOrder : 0,
-    menuTitle : "Hamburger Menu",
-    menuImageUrl : "./assets/burger.png",
-    menuContents : [ "250 gr Hamburger Eti", "Patates", "5'li Soğan Halkası"],
-    }
-
-
-var menuData02 = {
-    menuOrder : 0,
-    menuTitle : "Ton Balıklı Salata Menu",
-    menuImageUrl : "./assets/salad.png",
-    menuContents : [ "Ton Balığı", "Akdeniz Yeşillikleri", "Kruton"],
-}
-
-var menuData03 = {
-    menuOrder : 0,
-    menuTitle : "Döner Wrap Menu",
-    menuImageUrl : "./assets/doner.png",
-    menuContents : [ "Wrap Et Döner", "Yeşillikler", "Patates"],
-}
-
-var menuData04 = {
-    menuOrder : 0,
-    menuTitle : "Taco Menu",
-    menuImageUrl : "./assets/burger.png",
-    menuContents : [ "Taco", "Patates", "Cola"],
-}
-
-var menuData05 = {
-    menuOrder : 0,
-    menuTitle : "Beef Menu",
-    menuImageUrl : "./assets/burger.png",
-    menuContents : [ "Ton Balığı", "Patates", "Cola"],
-}
-
-
-menuDataArray.push(menuData01);
-menuDataArray.push(menuData02);
-menuDataArray.push(menuData03);
-menuDataArray.push(menuData04);
-menuDataArray.push(menuData05);
-
-
 class MockDataGenerator {
+
+    menuDataArray = [];
 
     constructor() {
 
         try {
+            this.menuDataArray = [];
 
-            this.testMomentObject = moment();
+            var menuData01 = {
+                menuOrder: 0,
+                menuTitle: "Hamburger Menu",
+                menuImageUrl: "./assets/burger.png",
+                menuContents: ["250 gr Hamburger Eti", "Patates", "5'li Soğan Halkası"],
+                menuBackgroundColor : "rgb(226, 96, 21)"
+            }
 
-            this.menuDataArray = menuDataArray;
+
+            var menuData02 = {
+                menuOrder: 0,
+                menuTitle: "Ton Balıklı Salata Menu",
+                menuImageUrl: "./assets/salad.png",
+                menuContents: ["Ton Balığı", "Akdeniz Yeşillikleri", "Kruton"],
+                menuBackgroundColor : "rgb(40, 103, 185)"
+            }
+
+            var menuData03 = {
+                menuOrder: 0,
+                menuTitle: "Döner Wrap Menu",
+                menuImageUrl: "./assets/doner.png",
+                menuContents: ["Wrap Et Döner", "Yeşillikler", "Patates"],
+                menuBackgroundColor : "rgb(240, 177, 12)"
+            }
+
+            var menuData04 = {
+                menuOrder: 0,
+                menuTitle: "Taco Menu",
+                menuImageUrl: "./assets/burger.png",
+                menuContents: ["Taco", "Patates", "Cola"],
+                menuBackgroundColor : "rgb(226, 96, 21)"
+            }
+
+            var menuData05 = {
+                menuOrder: 0,
+                menuTitle: "Beef Menu",
+                menuImageUrl: "./assets/burger.png",
+                menuContents: ["Ton Balığı", "Patates", "Cola"],
+                menuBackgroundColor : "rgb(240, 177, 12)"
+            }
+
+
+            this.menuDataArray.push(menuData01);
+            this.menuDataArray.push(menuData02);
+            this.menuDataArray.push(menuData03);
+            this.menuDataArray.push(menuData04);
+            this.menuDataArray.push(menuData05);
+
 
         } catch (exception) {}
     }
@@ -63,7 +64,7 @@ MockDataGenerator.prototype.constructor = MockDataGenerator;
 
 //returns a random number between 0 and (menuDataArray.length)
 MockDataGenerator.prototype.getRandomInt = function () {
-    Math.floor(Math.random() * (this.menuDataArray.length));
+    return Math.floor(Math.random() * (this.menuDataArray.length));
 };
 
 MockDataGenerator.prototype.fetchRandomObject = function () {

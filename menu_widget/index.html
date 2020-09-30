@@ -3,87 +3,59 @@
 <head>
   <link rel="stylesheet" href="./main.css" />
   <script src="deneme.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
 
-  <div class="widget-container">
-    <div class="left-tab">
-      <div class="img-part">
-        <img id="img1" src="./assets/burger.png" alt="">
-      </div>
-      <div id="title1" class="menu-name-part" ></div>
-      <div class="menu-content">
-        <div id="content1.1"></div>
-        <div id="content1.2"></div>
-        <div id="content1.3"></div>
-      </div>
-      <div class="menu-price">
-        <div class="price-img"><img src="./assets/price.png" alt=""></div>
-        <div class="price-text">29.90 TL</div>
-      </div>
-    </div>
-    <div class="center-tab">
-      <div class="img-part">
-        <img src="./assets/burger.png" alt="">
-      </div>
-      <div class="menu-name-part">Beef Menu</div>
-      <div class="menu-content">
-        <div>content 1</div>
-        <div>content 2</div>
-        <div>content 3</div>
-      </div>
-      <div class="menu-price">
-        <div class="price-img"><img src="./assets/price.png" alt=""></div>
-        <div class="price-text">29.90 TL</div>
-      </div>
-    </div>
-    <div class="right-tab">
-      <div class="img-part">
-        <img src="./assets/burger.png" alt="">
-      </div>
-      <div class="menu-name-part">Cheeseburger Menu</div>
-      <div class="menu-content">
-        <div>content 1</div>
-        <div>content 2</div>
-        <div>content 3</div>
-      </div>
-      <div class="menu-price">
-        <div class="price-img"><img src="./assets/price.png" alt=""></div>
-        <div class="price-text">29.90 TL</div>
-      </div>
-    </div>
+  <div class="widget-container" id="main-container">
   </div>
 
   <script>
-
     if (!String.prototype.formatString) {
-        String.prototype.formatString = function () {
-            var args = arguments;
-            return this.replace(/{(\d+)}/g, function (match, number) {
-                return typeof args[number] != 'undefined' ?
-                args[number] :
-                match;
-            });
-        };
-     }
+      String.prototype.formatString = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+          return typeof args[number] != 'undefined' ?
+            args[number] :
+            match;
+        });
+      };
+    }
 
 
-      $(document).ready(function () {
+    $(document).ready(function () {
 
       var myGenerator = new MockDataGenerator();
-      var generatedObject = myGenerator.fetchRandomObject();
       
-      $("#title1").text(generatedObject.Title);
-      $("#content1.1").text(generatedObject.contents[0]);
-      $("#content1.2").text(generatedObject.contents[1]);
-      $("#content1.3").text(generatedObject.contents[2]);
-      
-      generatedObject = myGenerator.fetchRandomObject();
-      //ortadaki menu icin aynı islemler..
-      
+      console.log(generatedObject);
 
-      });
+
+
+      for (var II = 0; II < 3; II++) {
+        var generatedObject = myGenerator.fetchRandomObject();
+        var menuDom = "";
+
+        menuDom =
+          '<div class="menu-tab" id="menu-tab-'+II+'"><div class="img-part"><img id="img'+II+'" src="./assets/burger.png" alt=""></div><div id="title"'+II+' class="menu-name-part" ></div><div class="menu-content"><div id="content'+II+'-1"></div><div id="content'+II+'-2"></div><div id="content'+II+'-3"></div></div>';
+        menuDom +=
+          '<div class="menu-price"><div class="price-img"><img src="./assets/price.png" alt=""></div><div class="price-text" id="price"'+II+'>29.90 TL</div></div></div>';
+        console.log("appending:" + menuDom);
+        $("#main-container").append(menuDom);
+
+        $("#title"+II).text(generatedObject.menuTitle);
+        $("#content"+II+"-1").html(generatedObject.menuContents[0]);
+        $("#content"+II+"-2").html(generatedObject.menuContents[1]);
+        $("#content"+II+"-3").html(generatedObject.menuContents[2]);
+
+        $("#menu-tab-"+II).css("background-color", generatedObject.menuBackgroundColor);
+      }
+
+
+      //ortadaki menu icin aynı islemler..
+
+
+    });
 
 
 

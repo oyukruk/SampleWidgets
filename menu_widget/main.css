@@ -8,14 +8,11 @@
   
   
 }
-.left-tab{
+.menu-tab{
   
   flex: 1;
   display: flex;
-  background-color: rgb(240, 177, 12);
   flex-direction: column;
- 
-  
 }
 
 .img-part{
@@ -37,21 +34,7 @@
   flex: 1;
 }
 
-.right-tab{
-  
-  background-color: rgb(226, 96, 21);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  
-}
-.center-tab{
-  background-color: rgb(40, 103, 185);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  
-}
+
 .menu-content{
   display: flex;
   flex-direction: column;
