@@ -1,0 +1,59 @@
+.widget-container{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .tab{
+  
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    min-height: 100%;
+  }
+
+  html, body, #body2
+{
+    height: 100%;
+    min-height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.booth {
+    
+    margin: 0%; 
+    min-width: 50%;
+    text-align: center;
+    position: relative;
+    border: black;
+    border-width: 1%;
+}
+
+.boothText {
+    position: absolute;
+    top: 48%;
+    left: 45%;
+    
+}
+
+.qNum {
+
+    margin: 0%; 
+    min-width: 50%;
+    text-align: center;
+    position: relative;
+    border: black;
+    border-width: 50%;
+}
+
+.qNumText {
+    position: absolute;
+    top: 48%;
+    left: 45%;
+    
+}
