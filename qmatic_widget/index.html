@@ -8,21 +8,40 @@
   <body>
 
     <div class="widget-container" id="main-container">
-      <div class="tab" id="tab-1" style="background-color: rgb(190, 157, 252);">
-        <div class="booth"> <div class="boothText">SELAM</div> </div> 
-        <div class="qNum"> <div class="qNumText">Naber</div> </div>
-      </div>
-
-      <div class="tab" id="tab-2" style="background-color: rgb(57, 55, 187);">
-      
-      </div>
-
-      <div class="tab" id="tab-3" style="background-color: rgb(252, 168, 157);">
-      
-      </div>
 
     </div>
 
   </body>
+
+  <script>
+
+      $(document).ready(function () {
+
+      var myGenerator = new MockDataGenerator();
+
+
+
+      for (var II = 0; II < 4; II++) {
+
+        var generatedObject = myGenerator.fetchRandomObject();
+        var qDom = "";
+
+        console.log(generatedObject.menuContents);
+
+        qDom =
+          '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
+        
+        console.log("appending:" + qDom);
+        $("#main-container").append(qDom);
+
+        $("#tab-"+II).css("background-color",generatedObject.tabBackgroundColor);
+        $("#boothText-"+II).text("GİŞE NO: " + generatedObject.tabBooth);
+        $("#qNumText-"+II).text("SIRA NO: " + generatedObject.tabQNum);
+
+      }
+
+      });
+
+  </script>
 
 </html>
