@@ -3,6 +3,8 @@
     <link rel="stylesheet" href="./main.css" />
     <script src="js/mock-data-generator.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/qmatic-simulator.js"></script>
   </head>
 
   <body>
@@ -15,11 +17,31 @@
 
   <script>
 
+    //kaç tane gişem var? => parametrik
+    //ekranda kaç satır bilgi göstericem? (yani aşağıdaki for looupun sınırı)
+
+    var queueArray = [];    
+
       $(document).ready(function () {
 
+
+        var qmaticSimulator = new QMaticSimulator(4, 2000, 
+        
+        function(queueData){
+
+          //gelen queue datayı, maximum 10 elemanı geçmeyecek şekilde bir array'e at
+          //ekranda göstereceğin gişe-sıra ikilisini de kullandığın bu arraye bakarak doldurabilirsin
+          queueArray.push(queueData);
+          console.log(queueArray);
+
+
+          console.log("Got new queue data");
+          console.log(queueData);
+        });
+
+        qmaticSimulator.start();
+
       var myGenerator = new MockDataGenerator();
-
-
 
       for (var II = 0; II < 4; II++) {
 
@@ -28,8 +50,7 @@
 
         console.log(generatedObject.menuContents);
 
-        qDom =
-          '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
+        qDom = '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
         
         console.log("appending:" + qDom);
         $("#main-container").append(qDom);
@@ -37,7 +58,6 @@
         $("#tab-"+II).css("background-color",generatedObject.tabBackgroundColor);
         $("#boothText-"+II).text("GİŞE NO: " + generatedObject.tabBooth);
         $("#qNumText-"+II).text("SIRA NO: " + generatedObject.tabQNum);
-
       }
 
       });
