@@ -42,7 +42,9 @@ QMaticSimulator.prototype.newQueueTick = function(){
     var newQueueData = {};
 
     newQueueData.queueNo = this.lastQueueNo;
-    newQueueData.boothNo = 5; //to be randomized
+    newQueueData.boothNo = Math.floor(Math.random() * (this.boothCount)+1); //randomized
+
+
     newQueueData.callTime = moment().format("DD.MM.YYYY HH:mm:ss");
 
     if (typeof this.newQueueCallback === "function") {

@@ -30,35 +30,45 @@
         function(queueData){
 
           //gelen queue datayı, maximum 10 elemanı geçmeyecek şekilde bir array'e at
+          if(queueArray.length >= 10) {
+            queueArray.shift();
+          }
+
           //ekranda göstereceğin gişe-sıra ikilisini de kullandığın bu arraye bakarak doldurabilirsin
           queueArray.push(queueData);
           console.log(queueArray);
 
-
           console.log("Got new queue data");
           console.log(queueData);
+
+          var myGenerator = new MockDataGenerator();
+          
+          $("#main-container").html('');
+          for (var II = queueArray.length; II > queueArray.length-4; II--) {
+            
+            console.log( 'queueArray[II]:   ' + queueArray[II]);  //undefined??
+
+            var generatedObject = myGenerator.fetchRandomObject();
+            var qDom = "";
+
+            console.log(generatedObject.menuContents);
+
+            qDom = '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
+            
+            console.log("appending:" + qDom);
+            $("#main-container").append(qDom);
+
+            $("#tab-"+II).css("background-color",generatedObject.tabBackgroundColor);
+            $("#boothText-"+II).text("GİŞE NO: " + generatedObject.tabBooth);
+            $("#qNumText-"+II).text("SIRA NO: " + generatedObject.tabQNum);
+          }
+
+
+
         });
 
         qmaticSimulator.start();
 
-      var myGenerator = new MockDataGenerator();
-
-      for (var II = 0; II < 4; II++) {
-
-        var generatedObject = myGenerator.fetchRandomObject();
-        var qDom = "";
-
-        console.log(generatedObject.menuContents);
-
-        qDom = '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
-        
-        console.log("appending:" + qDom);
-        $("#main-container").append(qDom);
-
-        $("#tab-"+II).css("background-color",generatedObject.tabBackgroundColor);
-        $("#boothText-"+II).text("GİŞE NO: " + generatedObject.tabBooth);
-        $("#qNumText-"+II).text("SIRA NO: " + generatedObject.tabQNum);
-      }
 
       });
 
