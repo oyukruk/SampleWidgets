@@ -1,7 +1,6 @@
 <!DOCTYPE html>
   <head>
     <link rel="stylesheet" href="./main.css" />
-    <script src="js/mock-data-generator.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/qmatic-simulator.js"></script>
@@ -41,29 +40,34 @@
           console.log("Got new queue data");
           console.log(queueData);
 
-          var myGenerator = new MockDataGenerator();
+         
           
           $("#main-container").html('');
           for (var II = queueArray.length; II > queueArray.length-4; II--) {
             
-            console.log( 'queueArray[II]:   ' + queueArray[II]);  //undefined??
-
-            var generatedObject = myGenerator.fetchRandomObject();
+            
             var qDom = "";
-
-            console.log(generatedObject.menuContents);
+            var color = "";
 
             qDom = '<div class="tab" id="tab-'+II+'"><div id="booth'+II+'" class="booth" ><div class="boothText" id="boothText-'+II+'"></div></div><div class="qNum" id="qNum-'+II+'"><div class="qNumText" id="qNumText-'+II+'"></div></div></div>';
             
             console.log("appending:" + qDom);
             $("#main-container").append(qDom);
 
-            $("#tab-"+II).css("background-color",generatedObject.tabBackgroundColor);
-            $("#boothText-"+II).text("GİŞE NO: " + generatedObject.tabBooth);
-            $("#qNumText-"+II).text("SIRA NO: " + generatedObject.tabQNum);
+            if(queueArray[II-1].queueNo % 2 == 0) {
+              //$("#tab-"+II).css("background-color",rgb(150, 191, 207));
+              color = ' rgb(88, 132, 214)';
+            }
+
+            else {
+              //$("#tab-"+II).css("background-color",rgb(252, 168, 157));
+              color = ' rgb(239, 242, 248)';
+            }
+
+            $("#tab-"+II).css("background-color",color);
+            $("#boothText-"+II).text("GİŞE NO: " + queueArray[II-1].boothNo);
+            $("#qNumText-"+II).text("SIRA NO: " + queueArray[II-1].queueNo);
           }
-
-
 
         });
 

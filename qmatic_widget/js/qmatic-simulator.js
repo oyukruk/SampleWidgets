@@ -51,7 +51,6 @@ QMaticSimulator.prototype.newQueueTick = function(){
         this.newQueueCallback(newQueueData)
     }
 
-
 }
 
 //returns a random number between 0 and (tabDataArray.length)
@@ -65,8 +64,6 @@ QMaticSimulator.prototype.start = function () {
         clearInterval(this.timerId);
         this.timerId = 0;
     }
-
-
 
 
     console.log("QMatic Simulator started");
