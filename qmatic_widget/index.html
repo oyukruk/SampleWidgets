@@ -55,16 +55,12 @@
             $("#main-container").append(qDom);
 
             if(queueArray[II-1].queueNo % 2 == 0) {
-              //$("#tab-"+II).css("background-color",rgb(150, 191, 207));
-              color = ' rgb(88, 132, 214)';
+              $("#tab-"+II).css("background-color","rgb(88, 132, 214)");
             }
-
             else {
-              //$("#tab-"+II).css("background-color",rgb(252, 168, 157));
-              color = ' rgb(239, 242, 248)';
+              $("#tab-"+II).css("background-color","rgb(239, 242, 248)");
             }
 
-            $("#tab-"+II).css("background-color",color);
             $("#boothText-"+II).text("GİŞE NO: " + queueArray[II-1].boothNo);
             $("#qNumText-"+II).text("SIRA NO: " + queueArray[II-1].queueNo);
           }
