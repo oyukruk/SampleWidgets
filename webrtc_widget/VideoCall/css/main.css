@@ -1,0 +1,191 @@
+body{
+    background:#B0C4DE;
+}
+
+#home{
+    margin-top: 15rem;
+    color:black;
+    padding: 1rem;
+}
+
+#home .home-form{
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group{
+    padding: 0.25rem 0;
+    margin:0 auto;
+}
+
+.form-group label{
+    display: block;
+}
+
+.form-control{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    justify-content: center;
+    resize: none;
+    border: 1px solid black;
+}
+
+.buttonsubmit{
+    font-weight: 700;
+    font-style: italic;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    background: #336ea2;
+    color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.buttonsubmit:hover{
+    background:white;
+    color: #336ea2;
+}
+
+#greet{
+    margin-top: 0;
+    margin:1rem 1.5rem;
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.welcome-form{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#camera{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+.welcome-group{
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+#callName{
+    width: 35%;
+    margin-left: 0.25rem;
+    margin-right: 3rem;
+    border-radius: 6px;
+}
+
+.buttonCall{
+    margin-bottom: 0.5rem;
+    width: 13rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    color:green;
+    border: 1px solid black;
+    border-radius: 6px;
+
+}
+
+.buttonCall:hover{
+    background:green;
+    color: white;
+}
+
+#answer{
+    width: 100%;
+    height: 50px;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    z-index: 1;    
+    justify-content: center;
+} 
+
+/* #confirm{
+    width: 10rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    background: green;
+    visibility: none;
+    margin-right: 1rem;
+    border-radius: 6px;
+}
+
+#ignore{
+    width: 10rem;
+    text-align: center;
+    background: red;
+    font-style: italic;
+    font-weight: bold;
+    visibility: none;
+    margin-right: 1rem;
+    border-radius: 6px;} */
+
+
+    .buttonEndCall{
+        width: 13rem;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        color:red;
+        border: 1px solid black;
+        border-radius: 6px;
+    }
+    
+    .buttonEndCall:hover{
+        background:red;
+        color: white;
+    }
+
+    .message-container{
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background:	#808080;
+        border: 3px solid black;
+        
+    }
+
+    #area{
+        box-sizing: border-box;
+        display: flex;
+        width: 20rem;
+        height: 45rem;
+        background: white;
+        border: 1px solid black;
+        overflow: auto;
+    }
+
+    #messageInput{
+        margin-top: 0.25rem;
+        height: 2rem;
+    }
+
+    #sendMsgButton{
+        margin-top: 0.25rem;
+        background:#336ea2;
+        color: white;
+    }
+
+    ul{
+        width: 100%;
+        padding-inline-start: 10px;
+    }
+
+
+
+
